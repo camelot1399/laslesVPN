@@ -11,20 +11,35 @@ $bgGray: #F8F8F8
   padding: 0
 body
   font-family: 'Rubik', sans-serif
-
+h1
+  font-weight: 500
+  font-size: 50px
+  line-height: 70px
+  color: #0B132A
 h2
   color: #0B132A
   font-weight: 500
   font-size: 35px
   line-height: 50px
   margin-bottom: 20px
+h3
+  font-size: 18px
+  font-weight: 500
+  line-height: 45px
+  color: #0B132A
 p
   color: #4F5665
   font-style: normal
   font-weight: normal
   font-size: 16px
   line-height: 30px
-
+.nowrap
+  display: flex
+  flex-wrap: nowrap
+.column50
+  display: flex
+  flex-direction: column
+  flex: 1
 .main
   margin-left: 150px
   margin-right: 150px
@@ -45,6 +60,7 @@ button
   background: white
   transition: all 0.6s
   text-decoration: none
+  width: 50%
   &:hover
     @extend .btn__active
   &__active
@@ -90,6 +106,9 @@ header
   font-style: normal
   font-weight: 500
   font-size: 16px
+  display: flex
+  align-items: center
+  justify-content: space-between
   &__signIn
     color: #0B132A
   &__signUp
@@ -106,10 +125,12 @@ header
   justify-content: space-between
   margin-top: 100px
   &__left
-    max-width: 360px
-    &_h1
+    display: flex
+    flex-direction: column
+    flex: 1
+    padding: 10px
+    &_h2
       margin-top: 20px
-      line-height: 40px
     &_p
       margin-top: 20px
       line-height: 30px
@@ -120,7 +141,10 @@ header
       color: white
       padding: 17px 60px
   &__right
-    max-width: 360px
+    display: flex
+    flex-direction: column
+    flex: 1
+    padding: 10px
     &_img
       width: 100%
 
@@ -178,7 +202,7 @@ header
   &__right
     max-width: 360px
   &__h2
-    line-height: 50px
+    
   &__p
     line-height: 30px
     margin-top: 20px
@@ -201,7 +225,7 @@ header
 .chooseYourPlan
   padding-top: 80px
   padding-bottom: 180px
-  background: #E5E5E5
+  background: $bgGray
   text-align: center
   &__list
     display: flex
@@ -245,6 +269,9 @@ header
   &__btn
     margin-top: 20px
     padding: 17px 60px
+    display: flex
+    align-items: center
+    justify-content: center
 
 .map
   margin-top: 150px
@@ -262,6 +289,7 @@ header
 .messages
   text-align: center
   margin-top: 120px
+  padding-bottom: 150px
   &__slider
     margin-top: 60px
     margin-left: 150px
@@ -342,16 +370,19 @@ header
   justify-content: space-between
   align-items: center
   padding: 60px
-  box-shadow: $boxShadow
-  margin-top: 65px
+  box-shadow: 0px 13px 18px rgb(17,19,35, 0.1)
+  position: relative
+  top: -90px
+  background-color: white
   &__btn
     padding: 17px 60px
+    border-radius: 10px
+    max-width: 250px
 
 footer
-  padding-top: 180px
   padding-bottom: 100px
-  
   background-color: $bgGray
+  position: relative
 .footer
   display: flex
   justify-content: space-between
@@ -360,6 +391,7 @@ footer
     display: flex
     flex-direction: column
     align-items: start
+    flex: 1
     &_p
       margin-top: 25px
       line-height: 30px
@@ -387,6 +419,18 @@ footer
     display: flex
     align-items: stretch
     justify-content: space-between
+    flex: 1
     &_group
       display: flex
       justify-content: space-between
+      & div:not(:first-child)
+        margin-left: 120px
+  &__ul
+    margin-top: 20px
+    padding: 0
+  &__li
+    list-style-type: none
+    &_a
+      font-size: 16px
+      line-height: 30px
+      color: #4F5665
